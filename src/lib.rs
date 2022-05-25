@@ -6,7 +6,7 @@ pub struct UriProtocol {
     pub description : String,
     pub command : String,
 }
-
+#[cfg(windows)]
 pub fn get_protocols() -> Result<Vec<UriProtocol>,String> {
     let hkey_cr = RegKey::predef(HKEY_CLASSES_ROOT);
 
