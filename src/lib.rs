@@ -1,4 +1,3 @@
-use winreg::{enums::HKEY_CLASSES_ROOT, RegKey};
 
 #[derive(Debug)]
 pub struct UriProtocol {
@@ -8,6 +7,8 @@ pub struct UriProtocol {
 }
 #[cfg(windows)]
 pub fn get_protocols() -> Result<Vec<UriProtocol>,String> {
+    use winreg::{enums::HKEY_CLASSES_ROOT, RegKey};
+    
     let hkey_cr = RegKey::predef(HKEY_CLASSES_ROOT);
 
     let mut protocols = vec![];
