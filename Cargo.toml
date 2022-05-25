@@ -1,6 +1,6 @@
 [package]
 name = "get-all-uri-protocols"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
 authors = ["Luna <luna@astolfo.uk>"]
 description = "Get all URI protocols which you have installed on your pc."
@@ -9,3 +9,7 @@ license-file = "LICENSE"
 
 [target.'cfg(windows)'.dependencies]
 winreg="0.10.1"
+
+[package.metadata.docs.rs]
+# This also sets the default target to `x86_64-pc-windows-msvc`
+targets = ["x86_64-pc-windows-msvc", "i686-pc-windows-msvc"]
